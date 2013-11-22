@@ -1,0 +1,116 @@
+{
+   "access_denied": {
+      "message": "\u8BBF\u95EE\u88AB\u62D2\u7EDD"
+   },
+   "authorization": {
+      "message": "\u6388\u6743"
+   },
+   "blur": {
+      "message": "\u6A21\u7CCA"
+   },
+   "border": {
+      "message": "\u53EA\u753B\u8FB9\u6846"
+   },
+   "cancel": {
+      "message": "\u53D6\u6D88"
+   },
+   "captureArea": {
+      "message": "\u9009\u62E9\u533A\u57DF\u622A\u56FE"
+   },
+   "captureWebpage": {
+      "message": "\u6574\u5F20\u7F51\u9875\u622A\u56FE"
+   },
+   "captureWindow": {
+      "message": "\u53EF\u89C6\u533A\u57DF\u622A\u56FE"
+   },
+   "extDescription": {
+      "message": "\u8FD9\u4E2A\u6269\u5C55\u7A0B\u5E8F\u53EF\u4EE5\u8BA9\u4F60\u65B9\u4FBF\u5730\u4ECE\u4EFB\u610F\u7F51\u7AD9\u4E0A\u91C7\u96C6\u559C\u6B22\u7684\u56FE\u7247\u3001\u89C6\u9891\u6216\u8005\u7F51\u9875\u622A\u56FE\u5230\u82B1\u74E3\u7F51(huaban.com)\u4E0A\u3002\u8FD9\u662F\u82B1\u74E3\u7F51\u5B98\u65B9(huaban.com)\u63D0\u4F9B\u7684\u6269\u5C55\u3002"
+   },
+   "extName": {
+      "message": "\u82B1\u74E3\u7F51\u9875\u6536\u85CF\u5DE5\u5177"
+   },
+   "hide": {
+      "message": "\u9690\u85CF"
+   },
+   "highlight": {
+      "message": "\u9AD8\u4EAE\u6807\u8BB0"
+   },
+   "http_413": {
+      "message": "\u56FE\u7247\u592A\u5927"
+   },
+   "invalid_grant": {
+      "message": "\u65E0\u6548\u7684\u6388\u6743"
+   },
+   "line": {
+      "message": "\u753B\u7EBF"
+   },
+   "minImageSide": {
+      "message": "\u56FE\u7247\u6700\u5C0F\u8FB9\u957F"
+   },
+   "network_err": {
+      "message": "\u7F51\u7EDC\u9519\u8BEF"
+   },
+   "ok": {
+      "message": "\u786E\u5B9A"
+   },
+   "pinText": {
+      "message": "\u91C7\u96C6\u56FE\u7247"
+   },
+   "preferences": {
+      "message": "\u9009\u9879"
+   },
+   "rect": {
+      "message": "\u586B\u5145\u6574\u4E2A\u533A\u57DF"
+   },
+   "redact": {
+      "message": "\u6D82\u9ED1"
+   },
+   "remove_auth": {
+      "message": "\u79FB\u9664\u6388\u6743"
+   },
+   "save": {
+      "message": "\u4FDD\u5B58\u5230\u672C\u5730"
+   },
+   "save_image": {
+      "message": "\u4FDD\u5B58\u56FE\u7247"
+   },
+   "shoppingName": {
+      "message": "\u82B1\u74E3\u5E02\u96C6"
+   },
+   "show": {
+      "message": "\u663E\u793A"
+   },
+   "showimageTitle": {
+      "message": "\u7f51\u9875\u622a\u56fe\u5230U2"
+   },
+   "siteName": {
+      "message": "\u82B1\u74E3\u7F51"
+   },
+   "size_huge": {
+      "message": "\u7279\u5927"
+   },
+   "size_large": {
+      "message": "\u5927"
+   },
+   "size_normal": {
+      "message": "\u6B63\u5E38"
+   },
+   "size_small": {
+      "message": "\u5C0F"
+   },
+   "solid_black": {
+      "message": "\u7EAF\u9ED1"
+   },
+   "text": {
+      "message": "\u6807\u6CE8\u6587\u5B57"
+   },
+   "toggleBtnText": {
+      "message": "\u663E\u793A\u91C7\u96C6\u6309\u94AE"
+   },
+   "upload": {
+      "message": "\u91c7\u96c6\u5230U2"
+   },
+   "visit": {
+      "message": "\u8BBF\u95EE"
+   }
+}

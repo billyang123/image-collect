@@ -1,0 +1,43 @@
+{
+  "name" : "u2",
+  "version" : "0.1.0",
+  "manifest_version" : 2,
+  "description": "u2图片采集",
+  "browser_action": {
+      "default_icon": "images/logo_48.png",
+      "default_popup": "popup.html",
+      "default_title": "u2图片采集"
+  },
+  "background": {
+      "scripts": [ "js/background.js","js/ued.js","lib/ajax.js"]
+   },
+  "default_locale": "zh_CN",
+  "icons": {
+      "128": "images/logo_128.png",
+      "16": "images/logo_16.png",
+      "48": "images/logo_48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["js/CapturePhoto.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "js": ["lib/jquery-1.10.2.js","js/isload.js","js/temp.js"],
+      "matches": ["http://*/*","http://*/*","http://*/*"],
+      "run_at": "document_start"
+    },
+    {
+      "js": [ "js/shotPage.js"],
+      "matches": [ "http://*/*"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "permissions":[
+    "contextMenus", "tabs", "http://*/*", "https://*/*"
+  ],
+  "update_url": "http://clients2.google.com/service/update2/crx",
+  "web_accessible_resources": [ "css/capture.css", "css/showimage.css", "js/utils.js", "lib/editor.js", "lib/account.js", "js/ued.js", "lib/ui.js", "lib/upload_ui.js", "lib/ajax.js"]
+}

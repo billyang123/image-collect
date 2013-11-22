@@ -1,0 +1,116 @@
+{
+   "access_denied": {
+      "message": "Access denied"
+   },
+   "authorization": {
+      "message": "Authorization"
+   },
+   "blur": {
+      "message": "Blur"
+   },
+   "border": {
+      "message": "Draw Border Only"
+   },
+   "cancel": {
+      "message": "Cancel"
+   },
+   "captureArea": {
+      "message": "Capture Selected Region"
+   },
+   "captureWebpage": {
+      "message": "Capture Whole Page"
+   },
+   "captureWindow": {
+      "message": "Capture Visible Content"
+   },
+   "extDescription": {
+      "message": "This extension lets you grab images/videos or capture web pages from any website and add it to boards on Huaban(huaban.com) easily."
+   },
+   "extName": {
+      "message": "Huaban Collector"
+   },
+   "hide": {
+      "message": "Hide"
+   },
+   "highlight": {
+      "message": "Highlight"
+   },
+   "http_413": {
+      "message": "Image is Too Large"
+   },
+   "invalid_grant": {
+      "message": "Invalid grant"
+   },
+   "line": {
+      "message": "Line"
+   },
+   "minImageSide": {
+      "message": "Minimum Image Side"
+   },
+   "network_err": {
+      "message": "Network Error"
+   },
+   "ok": {
+      "message": "OK"
+   },
+   "pinText": {
+      "message": "Pin images/videos"
+   },
+   "preferences": {
+      "message": "Preferences"
+   },
+   "rect": {
+      "message": "Fill Entire Area"
+   },
+   "redact": {
+      "message": "Redact"
+   },
+   "remove_auth": {
+      "message": "Remove authorization"
+   },
+   "save": {
+      "message": "Save"
+   },
+   "save_image": {
+      "message": "Save Image"
+   },
+   "shoppingName": {
+      "message": "Shopping"
+   },
+   "show": {
+      "message": "Show"
+   },
+   "showimageTitle": {
+      "message": "Screen Capture to Huaban"
+   },
+   "siteName": {
+      "message": "Huaban"
+   },
+   "size_huge": {
+      "message": "Huge"
+   },
+   "size_large": {
+      "message": "Large"
+   },
+   "size_normal": {
+      "message": "Normal"
+   },
+   "size_small": {
+      "message": "Small"
+   },
+   "solid_black": {
+      "message": "Solid Black"
+   },
+   "text": {
+      "message": "Text"
+   },
+   "toggleBtnText": {
+      "message": "Show pin button"
+   },
+   "upload": {
+      "message": "Upload"
+   },
+   "visit": {
+      "message": "Vist"
+   }
+}

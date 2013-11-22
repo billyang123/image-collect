@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <style type="text/css">
+      .button {
+        width: auto;
+        height: 22px;
+        font-size: 13px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        border: 1px #EBEBEB solid;
+        padding: 0 10px;
+        margin: 0 0 10px 0;
+        line-height: 22px;
+        text-align: center; 
+        cursor: pointer;
+        text-shadow: #EEE 1px 1px 1px;
+        -webkit-transition-duration: 0.2s;
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#F7F7F7));
+      }
+      #menu {
+        width: 200px;
+      }
+      #menu ul {
+        list-style: none;
+        padding-left: 0;
+        font-size: 12px;
+      }
+      #toggleBtn{
+        width: auto;
+        height: 22px;
+        font-size: 13px;
+        border-radius: 3px;
+        cursor: pointer;
+        text-align:center;
+      }
+      #toggleBtn .checked{
+        color:#D54444;
+      }
+      #toggleBtn .unchecked{
+        color:#333333;
+      }
+    </style>
+    <body>
+        <div id="menu" class="popup">
+            <ul>
+                <li id="collectAll" class="button">
+                    <span></span>
+                </li>
+                <li id="captureAreaItem" class="button capture">
+                    <span></span>
+                </li>
+                <li id="captureWindowItem" class="button capture">
+                    <span></span>
+                </li>
+                <li id="captureWebpageItem" class="button capture">
+                    <span></span>
+                </li>
+                <li id="toggleBtn">
+                    <span class="checked">显示采集按钮</span>
+                </li>
+            </ul>
+        </div>
+        <script src="lib/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="js/popup.js" type="text/javascript"></script>
+    </body>
+
+</html>
