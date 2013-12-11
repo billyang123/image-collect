@@ -1,0 +1,1 @@
+# collect images of Chrome
