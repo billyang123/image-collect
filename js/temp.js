@@ -1,10 +1,12 @@
 var minWidth = 100;
-var global = "__UED_2_";
-var siteDomain = "ued2.taobao.com:8080";
-var bookmarkletUrl = "http://" + siteDomain + "/taobao/u2/bookmarklet/";//采集跳转
-var look_collectUrl = "http://" + siteDomain + "/taobao/u2/collect/info.php";//查看采集
-var ajax_host = "http://"+siteDomain+"/taobao/u2/collect/index.php";//采集地址
-var collectionBtmStr = '<div id="REPSTREEcollection_button"><a href="javascript:void(0);" id="REPSTREEFast_Acquisition" class="_Fast_Acquisition">快速采集</a><a href="javascript:void(0);" id="REPSTREEAcquisition" class="_Acquisition">Add</a></div>'.replace(new RegExp("REPSTREE","g"),global);
+var global = "__mynotes_img_";
+var siteDomain = "127.0.0.1";
+var bookmarkletUrl = "http://" + siteDomain + "/index.php/bookmarklet";//采集跳转
+var look_collectUrl = "http://" + siteDomain + "/index.php/media/album/";//查看采集
+var ajax_host = "http://"+siteDomain+"/index.php/upload/sign";//采集地址
+var ajax_ckeckLogin = "http://"+siteDomain+"/index.php/account/logincheck";//是否登录
+var loginUrl = "http://"+siteDomain+"/index.php/login";
+var collectionBtmStr = '<div id="REPSTREEcollection_button" style="display:none;"><a href="javascript:void(0);" id="REPSTREEFast_Acquisition" class="_Fast_Acquisition">快速采集</a><a href="javascript:void(0);" id="REPSTREEAcquisition" class="_Acquisition">Add</a></div>'.replace(new RegExp("REPSTREE","g"),global);
 
 var previewTemp = '<div class="REPSTREEimg_preview"><div class="REPSTREEimg_size">{{{w}}}x{{{h}}}</div><div class="REPSTREEimg"><a href="javascript:void(0)"><img style="margin-top:{{{top}}}px" src="{{{src}}}" alt="{{{description}}}" class="REPSTREEimage_to"><em><span class="REPSTREEfast_collection REPSTREEcol_btm">快速采集</span><span class="REPSTREEcollection REPSTREEcol_btm">Add</span></em></a></div></div>'.replace(new RegExp("REPSTREE","g"),global);
 

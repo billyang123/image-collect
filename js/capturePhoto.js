@@ -1,5 +1,6 @@
 console.log("capturePhoto.js is loaded")
 document["__UED_2_"] = {};
+document[global] = {};
 (function(){
   var collectionBtm = $(collectionBtmStr);//采集按钮
   var validImages = [];//有效图片组
@@ -43,12 +44,13 @@ document["__UED_2_"] = {};
     return false
   }
   function getAndRegisterImages(){
-    $("img[data-isReg!='registered']").each(function(index,image){
-      if( isValidImage(image) && !$(image).hasClass(global+"image_to") ){
-        var isbg=checkBackgrund(image);
+    $("img[data-registered!='registered']").each(function(index,image){
+      var curImg = $(image);
+      if( isValidImage(image) && !curImg.hasClass(global+"image_to") ){
+        var isbg=checkBackgrund(image);//判断是否是背景图片
         var validImg = isbg?isbg:encapsulateImage(image);
-        $(image).attr("data-isReg","registered");
-        $(image).bind("mousemove mouseover",function(e){
+        curImg.attr("data-registered","registered");
+        curImg.bind("mousemove mouseover",function(e){
           getToggleOn(function(isToggleOn){
             if(isToggleOn){
               _offset = $(e.target).offset();
@@ -69,23 +71,24 @@ document["__UED_2_"] = {};
   //识别img是否是背景图片
   function checkBackgrund(el){
     var node = el;
-    if (!node) return;
+    if (!node) return false;
     var bgimg = $(node).css("background-image") || $(node).css("background");
-    if (!bgimg) return;
+    if (!bgimg) return false;
     var result = bgimg.match(/url\((.+)\)/);
-    if (result == null || result.length != 2) return;
+    if (result == null || result.length != 2) return false;
     var bg_url = result[1];
     if (bg_url.indexOf("http://") == 0 || bg_url.indexOf("https://") == 0 || bg_url.indexOf("/") == 0) {
       var img = document.createElement("img");
       img.src = bg_url;
       return encapsulateImage(img);
     }
-    return;
+    return false;
   }
   function getImageType(href){
     var arr_list = href.split(".");
     return arr_list[arr_list.length-1];
   }
+  //判断浏览器是否是谷歌插件的开发模式tab
   function isCollect(){
     var currentHost = location.host;
     if (/^(?:about|chrome)/.test(location.protocol)) {
@@ -101,10 +104,16 @@ document["__UED_2_"] = {};
   function requireLogin() {
     chrome.extension.sendRequest({
       msg: "requireLogin"
-    }, function(response) {})
+    }, function(response) {
+      if(response.requireLogin){
+        var features = "status=no,resizable=no,scrollbars=yes,personalbar=no,directories=no,location=no,toolbar=no,menubar=no,width=800,height=350,left=0,top=0";
+        window.open(loginUrl, "pin" + (new Date).getTime(), features)
+      }
+    })
   }
   function checkLogin(callback) {
     chrome.extension.sendRequest({
+      url: ajax_ckeckLogin,
       msg: "isLogin"
     }, function(response) {
       if (response && response.user) {
@@ -112,7 +121,8 @@ document["__UED_2_"] = {};
         isLogin = true
       } else {
         isLogin = false
-      } if (typeof callback === "function") {
+      } 
+      if (typeof callback === "function") {
         callback()
       }
     })
@@ -221,9 +231,9 @@ document["__UED_2_"] = {};
             return callback()
           }
           var data = {
-            text: image.description || image.title || image.alt || "",
+            description: image.description || image.title || image.alt || "",
             link: image.url || "",
-            img_url: image.media,
+            imgUrl: image.media,
             media_type : image.media_type|| ""
           };
           ued_xdm && ued_xdm.request && ued_xdm.request({
@@ -236,7 +246,7 @@ document["__UED_2_"] = {};
               fastCollect_state(eImage, divImagePreview, position, "failed", res.msg);
               return callback()
             }
-            var msg = '<a href="' + look_collectUrl+'?collect_id='+ $.parseJSON(res).collect_id + '" target="_blank">查看采集</a>';
+            var msg = '<a href="' + look_collectUrl + res.content.albumId + '" target="_blank">查看采集</a>';
             fastCollect_state(eImage, divImagePreview, position, "success", msg);
             return callback()
           }, function() {
@@ -300,7 +310,6 @@ document["__UED_2_"] = {};
   //按钮初始化
   function initBtmAndBind(){
     $("body").append(collectionBtm);
-    collectionBtm.hide();
     collectionBtm.bind("mousemove mouseover",function(e){
       if(isCollect()){
         collectionBtm.show();

@@ -1,3 +1,4 @@
+var DOMAIN = "127.0.0.1";
 function toggle(b) {
   b = !! b || !(localStorage.toggle == "on");
   localStorage.toggle = b ? "on" : "off";
@@ -7,15 +8,23 @@ function toggle(b) {
   });
   return localStorage.toggle != "off"
 }
-chrome.extension.onRequest.addListener(function(request, d, response) {
+chrome.extension.onRequest.addListener(function(request, sender, response) {
   switch (request.msg) {
     case "isLogin":
-      response({
-        user: "yangbinbin"
-      });
+      _UED_2_.isCkeckLogin(request.url,function(i,d){
+        if (i == "failure"){}else{
+          if(d.success){
+            response({
+              user: d.content.username
+            });
+          }
+        }
+      })
       break;
     case "requireLogin":
-      console.log("requireLogin")
+      response({
+        requireLogin: true
+      });
       break;
     case "isToggleOn":
       response({
@@ -48,7 +57,6 @@ var pinMenuItemId = chrome.contextMenus.create({
   documentUrlPatterns: ["http://*/*", "https://*/*"],
   onclick: showValidImages
 });
-var DOMAIN = "ued2.taobao.com:8080";
 function showValidImages(a) {
   chrome.tabs.getSelected(null, function(c) {
     var d = c.url;
