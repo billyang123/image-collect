@@ -1,4 +1,4 @@
-var DOMAIN = "127.0.0.1";
+var DOMAIN = "10.63.12.26";
 function toggle(b) {
   b = !! b || !(localStorage.toggle == "on");
   localStorage.toggle = b ? "on" : "off";

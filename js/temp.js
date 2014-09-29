@@ -1,6 +1,6 @@
 var minWidth = 100;
 var global = "__mynotes_img_";
-var siteDomain = "127.0.0.1";
+var siteDomain = "10.63.12.26";
 var bookmarkletUrl = "http://" + siteDomain + "/index.php/bookmarklet";//采集跳转
 var look_collectUrl = "http://" + siteDomain + "/index.php/media/album/";//查看采集
 var ajax_host = "http://"+siteDomain+"/index.php/upload/sign";//采集地址
