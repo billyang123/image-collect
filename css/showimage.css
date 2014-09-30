@@ -1,5 +1,5 @@
 html {
-  background: #F7F5F5 url(/images/huaban_paper.jpg) repeat;
+  background: #F7F5F5 repeat;
 }
 body {
   font-size: 13px;
@@ -129,7 +129,7 @@ header#header {
 }
 #pinWrapper .header {
   position: relative;
-  margin: -30px -31px 20px;
+  margin: -30px -31px 20px -30px;
   padding: 18px 0 8px 31px;
   background-color: #F2F0F0;
   border-bottom: 1px solid #CCCACA;
@@ -191,7 +191,6 @@ header#header {
 }
 #bookmarklet {
   width: 550px;
-  height: 190px;
 }
 #bookmarklet #userIcon {
   display: block;
@@ -365,7 +364,7 @@ header#header {
   border: 1px solid #a4a2a2;
   border-radius: 3px;
   box-shadow: inset 0 1px rgba(34,25,25,0.15),0 1px rgba(255,255,255,0.8);
-  min-height: 98px;
+  min-height: 63px;
   background: white;
 }
 .FancyForm .pin-desc textarea {
@@ -740,8 +739,13 @@ header#header {
   width: 170px;
   max-height: 170px;
   min-height: 85px;
-  padding: 0;
-  overflow: hidden;
+  display: table-cell;
+  vertical-align:middle;
+  text-align:center;
+  border: 1px solid #eee;
+}
+.ImagePicker .Images img {
+  vertical-align: middle; 
 }
 .ImagePicker li {
   position: relative;
@@ -752,15 +756,6 @@ header#header {
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
-}
-.ImagePicker .Images {
-  position: relative;
-  float: left;
-  width: 170px;
-  max-height: 170px;
-  min-height: 85px;
-  padding: 0;
-  overflow: hidden;
 }
 .ImagePicker .video {
   position: absolute;
@@ -819,9 +814,15 @@ header#header {
   overflow: hidden;
 }
 .carousel-list li,.carousel-item {
-  float: left;
   width: 170px!important;
   height: 170px;
+  display: table-cell;
+  vertical-align:middle;
+  text-align:center;
+  border: 1px solid #eee;
+}
+.carousel-list li img{
+  vertical-align: middle;
 }
 .carousel-item a,.carousel-item img {
   max-width: 170px;
@@ -957,9 +958,7 @@ header#header {
   overflow-x: hidden;
 }
 .BoardPicker .CreateBoard,.BoardPicker .CreateCategory {
-  position: absolute;
-  bottom: 0;
-  padding: 8px;
+  padding: 8px 0;
   background-color: #f2f0f0;
   border-top: 1px solid #cccaca;
   border-radius: 0 0 6px 6px;
@@ -1007,7 +1006,6 @@ header#header {
   width: 334px;
 }
 .pin-form,#loading,#authorization {
-  display: none;
   margin-left: 200px;
   font-size: 21px;
   font-weight: 300;
@@ -1232,6 +1230,16 @@ header#header {
 .clear {
   clear: both;
 }
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix{*zoom:1;}
+
 .tool {
   position: absolute;
   border-radius: 3px 3px;
@@ -1408,4 +1416,25 @@ header#header {
 }
 #savePanel #closeSavePanel: hover {
   border-color: #ADADAD;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+#authorization.hide,#loading.hide {
+  display: none;
+}
+#authorization.show, #loading.show{
+  display: block;
+}
+.BoardListBody ul {
+  margin: 5px 0;
+}
+.BoardListBody li {
+  margin: 0;
+}
+.BoardListBody li:hover{
+  background-color: #e1e1e1;
 }

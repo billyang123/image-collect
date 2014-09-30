@@ -19,25 +19,26 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*"],
+      "matches": ["<all_urls>"],
       "js": ["js/CapturePhoto.js"],
       "run_at": "document_idle"
     },
     {
       "js": ["lib/jquery-1.10.2.js","js/isload.js","js/temp.js"],
-      "matches": ["http://*/*","http://*/*","http://*/*"],
+      "matches": ["<all_urls>"],
       "run_at": "document_start"
     },
     {
       "js": [ "js/shotPage.js"],
-      "matches": [ "http://*/*"],
+      "matches": [ "<all_urls>"],
       "run_at": "document_end"
     }
   ],
   
   "permissions":[
-    "contextMenus", "tabs", "http://*/*", "https://*/*"
+    "contextMenus", "tabs", "<all_urls>","activeTab"
   ],
   "update_url": "http://clients2.google.com/service/update2/crx",
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
   "web_accessible_resources": [ "css/capture.css", "css/showimage.css", "js/utils.js", "lib/editor.js", "lib/account.js", "js/ued.js", "lib/ui.js", "lib/upload_ui.js", "lib/ajax.js"]
 }

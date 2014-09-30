@@ -93,35 +93,34 @@
                     <div class="form">
                         <div class="header lg">
                             <a href="#" class="close"><strong>Close</strong><span></span></a>
-                            <h2>采集到U2</h2>
+                            <h2>保存到相册</h2>
                             <div id="userIcon">
                             </div>
                         </div>
-                        <div class="pbt">
+                        <div class="pbt clearfix">
                             <div class="ImagePicker">
                                 <img src="images/load.gif" alt="Loading Indicator" class="load" style="display:none" />
                                 <div class="Images pin carousel-container">
-                                    <div class="carousel-clip">
-                                        <ul class="carousel-list" style="width: 170px: left: 0px;">
-                                            <li></li>
-                                        </ul>
-                                    </div>
+                                    
                                 </div>
                             </div>
-                            <div class="pin-form">
+                            <div class="pin-form" id="pinForm">
                                 <div class="BoardListOverlay"></div>
                                 <div class="BoardSelector BoardPicker">
                                     <div class="current">
-                                        <span class="CurrentBoard">选择画板...</span>
+                                        <span class="CurrentBoard name">选择相册...</span>
                                         <span class="DownArrow"></span>
                                     </div>
-                                    <div class="BoardList">
+                                    <div class="BoardList boards">
                                         <div class="BoardListBody">
-                                            <ul></ul>
+                                            <ul >
+                                              <li data-id="1001">默认</li>
+                                            </ul>
                                         </div>
                                         <div class="CreateBoard">
-                                            <input type="text" id="board_name_input" placeholder="创建新画板"/>
-                                            <a href="javascript:;" class="nf btn btn18 wbtn disabled"><strong>创建</strong><span></span></a>
+                                            <input type="hidden" value="" id="userInfo">
+                                            <input type="text" id="board_name_input" placeholder="创建新相册"/>
+                                            <a href="javascript:;" class="nf btn btn18 wbtn disabled" id="NewCreateBorder"><strong>创建</strong><span></span></a>
                                             <div class="CreateBoardStatus"></div>
                                         </div>
                                     </div>
@@ -132,9 +131,9 @@
                                             <div class="pin-desc">
                                                 <textarea name="caption" id="description" cols="30" rows="2" class="DescriptionTextarea"></textarea>
                                                 <input type="hidden" id="url" />
-                                                <label for="" style="display: none;">描述一下这个采集…</label>
+                                                <label for="" style="display: none;">描述一下…</label>
                                                 <div class="tag-tip">
-                                                    <span>通过 #标签# 可以给采集添加标签，方便你更好地整理采集</span>
+                                                    <span>描述下图片的介绍和信息...</span>
                                                 </div>
                                                 <div class="tag-prompt" style="display: none;">
                                                     <span>推荐标签:</span>
@@ -147,7 +146,7 @@
                                 </div>
                                 <div class="CreateBoardStatus error mainerror"></div>
                                 <div class="Buttons">
-                                    <a href="javascript:;" class="btn btn18 rbtn"><strong>采下来</strong><span></span></a>
+                                    <a href="javascript:;" class="btn btn18 rbtn" id="J-collection"><strong>保存</strong><span></span></a>
                                     <label for="" class="weibo less">
                                         <input type="checkbox" class="publish_to_weibo" />
                                         <span>分享给微博粉丝</span>
@@ -155,16 +154,15 @@
                                 </div>
                             </div>
 
-                            <div id="loading">
-                                <div class="desc">正在获取授权...</div>
+                            <!-- <div id="loading" class="hide">
+                                <div class="desc">正在登录...</div>
                                 <div class="authorising"></div>
-                            </div>
-
-                            <div id="authorization">
+                            </div> -->
+                            <div id="authorization" class="hide">
                                 <div class="desc">
-                                    请在花瓣网上授权
+                                    请先在<a href="http://www.ybbnotes.com/login" target="_blank">www.ybbnotes.com</a>上登录
                                 </div>
-                                <a href="javascript:;" class="btn btn18 rbtn" id="auth_btn"><strong>获取授权</strong><span></span></a>
+                                <a href="javascript:window.location.reload();" class="btn btn18 rbtn" id="auth_btn"><strong>确定登入</strong><span></span></a>
                             </div>
                         </div>
 

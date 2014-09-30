@@ -1,4 +1,4 @@
-var DOMAIN = "10.63.12.26";
+var DOMAIN = "ybbnotes.com";
 function toggle(b) {
   b = !! b || !(localStorage.toggle == "on");
   localStorage.toggle = b ? "on" : "off";
@@ -227,6 +227,7 @@ var screenshot = {
     })
   },
   onResponseVisibleSize: function(a) {
+    if(!a) return;
     switch (a.msg) {
       case "capture_window":
         screenshot.captureVisible(a.docWidth, a.docHeight, a.page_info);
@@ -253,6 +254,8 @@ var screenshot = {
       case "scroll_finished":
         screenshot.captureAndScrollDone(a.page_info);
         break
+      default:
+        break;
     }
   },
   executeScriptsInExistingTabs: function() {
@@ -272,7 +275,7 @@ var screenshot = {
   },
   init: function() {
     localStorage.screenshootQuality = localStorage.screenshootQuality || "png";
-    screenshot.executeScriptsInExistingTabs();
+    //screenshot.executeScriptsInExistingTabs();
     screenshot.addMessageListener()
   }
 };
