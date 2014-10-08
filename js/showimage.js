@@ -128,8 +128,12 @@ window.addEventListener("load", function() {
   $("auth_btn").addEventListener("click",function(){
       window.location.reload();
 
-  })
-  $("J-collection").addEventListener("click",function(){
+  });
+  $("close_window").addEventListener("click", function() {
+      window.close()
+  });
+  $("J-collection").addEventListener("click",function(e){
+    document.querySelector("#J-collection").querySelector("strong").innerText = "保存中…";
     var data = {
         description: $("description").value,
         link: $("url").value,
@@ -150,7 +154,11 @@ window.addEventListener("load", function() {
         },
         data: _commUrlStr,
         success: function(p) {
-          UploadUI.closeDialog();
+          $("pin-done").style.display = "block";
+          document.querySelector("#bookmarklet .pbt").style.display = "none";
+          //UploadUI.closeDialog();
+          document.querySelector("#J-collection").querySelector("strong").innerText = "保存";
+          $("view_pin").href = "http://"+siteDomain+"/index.php/media/album/"+p.content.albumId;
         },
         status: {
           others: function(p, q) {
